@@ -1,6 +1,4 @@
 <script lang="ts">
-  import '$lib/web-component-registrations'
-
   import type { EnumTheme } from '$lib/theme'
   import { theme, themeSchema } from '$lib/theme'
   import { onMount } from 'svelte'
@@ -46,20 +44,19 @@
   })
 </script>
 
-<button on:click={toggleTheme}> Switch Theme </button>
-<!-- 
-<select id="theme-switcher" name="theme-switcher" value={}>
+<button on:click={toggleTheme} style:color="red"> Switch Theme </button>
+
+<!-- <select id="theme-switcher" name="theme-switcher">
   <option value="light">Light</option>
   <option value="dark">Dark</option>
   <option value="system">System</option>
 </select> -->
 
-<sp-picker id="picker-s" size="s" label="Selection type">
+<sp-picker label="Selection type" on:change={console.debug}>
   <sp-menu-item>Deselect</sp-menu-item>
   <sp-menu-item>Select inverse</sp-menu-item>
   <sp-menu-item>Feather...</sp-menu-item>
   <sp-menu-item>Select and mask...</sp-menu-item>
-  <sp-menu-divider></sp-menu-divider>
   <sp-menu-item>Save selection</sp-menu-item>
   <sp-menu-item disabled>Make work path</sp-menu-item>
 </sp-picker>

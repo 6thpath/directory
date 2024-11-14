@@ -1,5 +1,8 @@
 <script lang="ts">
-  import '../app.css'
+  import '$lib/web-component-registrations'
+
+  import '../styles/app.css'
+
   let { children } = $props()
 </script>
 
